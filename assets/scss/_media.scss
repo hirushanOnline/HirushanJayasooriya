@@ -1,0 +1,106 @@
+@import "variable";
+@import "mixin";
+
+/*-------------------------
+           MEDIA
+-------------------------*/
+@media (max-width: 1199px){
+    .scroll-button{
+        display: block;
+    }
+    .hero-01{
+        background-position: center;
+    }
+    .menu-toggler.open{
+        left: 105px;
+    }
+    .menu-toggler{
+        display: block;
+        position: fixed;
+        top: 25px;
+        left: 15px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    .menu-toggler span{
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: auto;
+        text-align: center;
+        border-radius: 10px;
+        line-height: 44px;
+        font-size: 22px;
+    }
+    header{
+        left: -90px;
+        transition: all 0.3s ease;
+    }
+    header.open{
+        left: 0;
+    }
+    #main > section {
+        padding-left: 0;
+    }
+    .blog-image::before {
+        height: 24%;
+    }
+    .color-scheme.hide{
+        right: -50px;
+    }
+    .color-switcher .pallet-button.hide{
+        right: -60px;
+    }
+    .color-switcher .color-pallet.hide{
+        right: -195px;
+    }
+	.modal-dialog {
+		max-width: 100%;
+	}
+
+}
+@media (max-width: 991px){
+    .hero-image{
+        display: none;
+    }
+    .hero-06{
+        text-align: center;
+    }
+
+}
+@media (max-width: 767px){
+    .social-box{
+        display: none;
+    }
+}
+
+@media (max-width: 575px){
+    .display-table, .display-content {
+        display: block;
+    }
+    .hero-01 .display-table, .hero-02 .display-table, .hero-03 .display-table, .hero-04 .display-table, .hero-05 .display-table{
+        display: table;
+    }
+    .hero-01 .display-content, .hero-02 .display-content, .hero-03 .display-content, .hero-04 .display-content, .hero-05 .display-content{
+        display: table-cell;
+    }
+    .about .personal-info span {
+        display: block;
+    }
+    .language-bar .list-inline-item:not(:last-child) {
+        margin-right: .25rem;
+    }
+    #message.toast {
+        top: 18px;
+        left: inherit;
+        font-size: 12px;
+        padding: 3px 0;
+      }
+
+}
+@media (max-width: 380px){
+    #message.toast {
+        top: 60px;
+        left: 15px;
+    }
+}

@@ -1,0 +1,691 @@
+@import "variable";
+@import "mixin";
+
+/*-------------------------
+           Hero
+-------------------------*/
+.hero-01{
+    background: url("http://placehold.it/1920x1280");
+    @include bg-hero;
+
+    &::before{
+        @include bg-before;
+        background-color: transparentize($color: map-get($map: $colors, $key: white), $amount: 0.6);  
+    }
+    .hero-content{
+        color: map-get($map: $colors, $key: secondary-dark);
+    }
+}
+.hero-02 {
+    background: url("http://placehold.it/1920x1280");
+    @include bg-hero;
+    background-position: center;
+}
+.hero-03 {
+    background: url("http://placehold.it/1920x1280");
+    @include bg-hero;
+    background-position: center;
+}
+.hero-02:before  ,.hero-03:before {
+    @include bg-before;
+    background-color: transparentize($color: #000000, $amount: 0.2);
+}
+.hero-02 .hero-content,.hero-03 .hero-content{
+    color: map-get($map: $colors, $key: light);
+}
+.hero-04{
+    background-color: map-get($map: $bg-colors, $key: lights);
+}
+.hero-05{
+    .video-overlay {
+        @include bg-hero;
+        left: auto;
+        overflow: hidden;
+    }
+    &::before{
+        @include bg-before;
+        background-color: transparentize($color: map-get($map: $colors, $key: white), $amount: 0.5); 
+        z-index: 1;
+    }
+} 
+.hero-item{
+    position: relative;
+    z-index: 5;
+}
+.hero-social{
+    .list-inline-item:not(:last-child) {
+        margin-right: 1.5rem;
+    }
+    li a{
+        font-size: 1.25rem;
+        color: map-get($map: $colors, $key: secondary-dark);
+    }
+}
+.hero-02 .hero-social li a, .hero-03 .hero-social li a{
+    color:map-get($map: $colors, $key: light);
+}
+.hero-image{
+    position: fixed;
+    bottom: 0;
+    max-width: 580px;
+
+    img{
+        width: $w-100;
+    }
+}
+canvas.particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.particles-js-canvas-el{
+    position: absolute;
+    top: 0;
+}
+/*-------------------------
+          HERO-06
+-------------------------*/
+.hero-06{
+    li img{
+        width: 15px;
+    }
+    .image-border img{
+        width: 80%;
+        padding: 4px;
+        background-color: transparent;
+        border: 1px solid #f0f0f0;
+        max-width: 100%;
+        height: auto;
+    }
+    .hero-06 .hero-social a i:hover{
+        color: map-get($map: $colors, $key: blues);
+    }
+    .hero-images img{
+        z-index: 10;
+        position: relative;
+        box-shadow: $box-shadow;
+    }
+    .hero-images .square img{
+        box-shadow: none;
+    }
+    .circle{
+        @include circle-option;
+        width: 85px;
+        height: 85px;
+        background: map-get($map: $color-full, $key: yellows);
+        top: 150px;
+        right: 34px;
+        animation: circling 18s linear infinite;
+        z-index: 11;
+    }
+    @keyframes circling{
+        0%{
+            transform:rotate(0deg)
+            translate(-80px)
+            rotate(0deg);
+        }
+        100%{
+            transform:rotate(360deg)
+            translate(-80px)
+            rotate(-360deg);
+        }
+    }
+    .circle-2{
+        @include circle-option;
+        width:55px;
+        height:55px;
+        background: map-get($map: $color-full, $key: oranges);
+        top:250px;
+        bottom:250px;
+        left:80px;
+        right:0;
+        margin:auto;
+        animation: circlereverse 22s linear infinite;
+        z-index: 11;
+    }
+    
+    @keyframes circlereverse{
+        0%{
+            transform: rotate(0deg)
+            translate(-275px)
+            rotate(0deg);
+        }
+        100%{
+            transform: rotate(-360deg)
+            translate(-275px)
+            rotate(360deg);
+        }
+    }
+    .floating{
+        @include circle-option;
+        width:50px;
+        height:50px;
+        background: map-get($map: $color-full, $key: greens);
+        top: 10px;
+        right: 40px;
+        z-index: 1;
+        animation: floating 5s linear infinite
+    }
+    @keyframes floating{
+        0%{
+            transform: translate(0px);
+    
+        }
+        50% {
+            transform: translate(-50px);
+        }
+        100% {
+            transform: translate(0px);
+        }
+    }
+    .square {
+        position: absolute;
+        bottom: 25px;
+        z-index: 0;
+        left: -10px;
+        -webkit-animation: rotate 25s linear infinite;
+        animation: rotate 25s linear infinite;
+    }
+    @keyframes rotate{
+        0%{
+            transform: rotate(0deg);
+    
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+} 
+
+/*-------------------------
+          About
+-------------------------*/
+.about .personal-info{
+    ul li{
+        margin-bottom: 1.25rem;
+        p{
+            font-weight: $font-weight-bold;
+        }
+    }
+    span{
+        font-weight: $font-weight-light;
+        color: map-get($map: $colors, $key: dark);
+    }
+}
+/*-------------------------
+         Count up
+-------------------------*/
+.count-up{
+    margin: 4rem 0;
+    padding: 32px 16px;
+}
+.count-number{
+    font-size: 1.5rem;
+    font-weight: $font-weight-bold;
+}
+.count-content{
+    margin: 10px 0;
+}
+.count-icon i{
+    font-size: 2.5rem;
+}
+/*-------------------------
+         Services
+-------------------------*/
+.services{
+    .services-item {
+        padding: 30px 10px;
+        margin-top: 30px;
+
+        &:hover{
+            .services-icon{
+                -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+                -webkit-transition: 0.9s ease;
+                -moz-transition: 0.9s ease;
+                -o-transition: 0.9s ease;
+                -ms-transition: 0.9s ease;
+                transition: 0.9s ease;
+            }
+        } 
+    }
+    .services-content {
+        padding-left: 3rem;
+    }
+}
+/*-------------------------
+        Testimonial
+-------------------------*/
+.testimonial{
+    .owl-carousel{
+        margin-top: 30px;
+        .testimonial-item{
+            padding: 0 30px 30px;
+            img{
+                width: 85px;
+                display: inline-block;
+                border-radius: 50%;
+            }
+            &:hover .testimonial-border{
+                width: 90px;
+            }
+        }
+        .owl-stage-outer {
+            padding: 1rem 0;
+        }
+        .testimonial-image{
+            position: relative;
+            display: inline-block;
+            border-radius: 50%;
+            padding: 10px;
+            margin-top: -60px;
+            background-color: map-get($map: $bg-colors, $key: bg-light);
+            width: 115px;
+            height: 115px;
+    
+            &::before{
+                @include content;
+                top: 0;
+                left: 2px;
+                width: 92%;
+                height: 40%;
+                background-color: map-get($map: $bg-colors, $key: bg-light);
+                z-index: 1;
+                right: 6px
+            }
+            &::after{
+                @include bg-before; 
+                box-shadow: $box-shadow-inset;
+                border-radius: 50%;
+                z-index: 0;
+                left:2px
+            }
+            .img-thumbnail{
+                background-color: transparent;
+            }
+        }
+        .testimonial-image-border {
+            box-shadow: $box-shadow;
+            border-radius: 50%;
+            padding: 5px;
+            position: relative;
+            z-index: 2;
+        }
+        .owl-item{
+            padding-top: 2rem;
+        }
+        .owl-dots{
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .owl-dot{
+            span{
+                display: block;
+                width: 24px;
+                height: 5px;
+                background-color: map-get($map: $bg-colors, $key: secondary-bg-dark);
+                margin: 0 0.25rem;
+                border-radius: $border-radius-defualt;
+                transition: all 0.3s ease;
+            }
+            &.active span{
+                width: 32px;
+                box-shadow: $box-shadow-second;
+            }
+        }
+    }
+}
+/*-------------------------
+         RESUME
+-------------------------*/
+.resume{
+    h3 i {
+        padding-right: 0.75rem;
+    }
+    .timeline-items{
+        padding: 30px;
+        margin-top: 30px;
+    }
+    .timeline-item{
+        position: relative;
+        margin-bottom: 30px;
+    
+        &::before{
+            @include bg-before;
+            content: "";
+            width: 1px;
+            border-radius: $border-radius-defualt;
+            display: block;
+        }
+    }
+    .timeline-contents{
+        padding-left: 30px;
+    }
+    .timeline-icon{
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        position: absolute;
+        top: 15px;
+        left: -7px;
+        z-index: 10;
+    }
+    .timeline-year{
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+/*-------------------------
+        Work SKILL
+-------------------------*/
+.skill-box {
+    padding:60px 30px 30px;
+    margin-top: 30px;
+    .skillbar {
+        position: relative;
+        display: block;
+        width: $w-100;
+        height: 10px;
+        border-radius: 5px;
+        transition: 0.1s linear;
+        background-color: map-get($map: $bg-colors, $key: bg-light);
+        box-shadow: $second-box-shadow-inset;
+
+        &:not(:last-child){
+            margin-bottom: 43px;
+        }
+    }
+    .skillbar-title {
+        position: absolute;
+        top: -28px;
+        left: -17px;
+        font-weight: 600;
+        font-size: 14px;
+        span {
+            margin-left: 18px;
+        }
+    }
+    .fill-skillbar {
+        height:10px;
+        width: 0;
+        border-radius: 5px;
+        float: left;
+    }
+    .skill-bar-percent {
+        position: absolute;
+        font-weight: 500;
+        bottom: 16px;
+        right: 0;
+    }
+}
+/*-------------------------
+      Language Skill
+-------------------------*/
+.language-bar {
+    padding:35px 30px;
+    margin-top: 30px;
+}
+.language-skill:not(:last-child){
+    margin-bottom: 15px;
+}
+.language-skill h4 {
+    font-size: 16px;
+}
+.language-skill h4 span {
+    color: map-get($map: $colors, $key: dark);
+    font-size: 14px;
+    font-weight: normal;
+}
+/*-------------------------
+         PORTFOLIO
+-------------------------*/
+.portfolio{
+    .portfolio-filter{
+        .list-inline-item:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+        li a {
+            padding:5px 15px;
+        }
+    }
+    .portfolio-item {
+        margin-top:30px;
+
+        &-content{
+            position:relative;
+            border-radius: $second-border-radius;
+
+            &::before{
+                content:"";
+                position:absolute;
+                top:15px;
+                right:15px;
+                bottom:15px;
+                left:15px;
+                opacity:0;
+                transform:scale(0.8);
+                transition:.5s all ease;
+                border-radius:1.25rem;
+            }
+            &:hover{
+                .img-overlay-content {
+                    opacity:1;
+                }
+                &::before {
+                    transform:scale(1);
+                    opacity:1;
+                }
+            } 
+        }
+    }
+    .img-overlay-content {
+        position:absolute;
+        width:100%;
+        top:50%;
+        transform:translateY(-50%);
+        text-align:center;
+        opacity:0;
+        transition:all .5s ease;
+        h5{
+            color: map-get($map: $colors, $key: light);
+        }
+    }
+    .portfolio-icon{
+        a{
+            @include portfolio-icon-content; 
+            line-height:37px;
+
+            i{
+                @include portfolio-i-content;
+            }
+        }
+        button{
+            @include portfolio-icon-content; 
+            line-height:33px;
+            border-color:transparent;
+            i{
+                @include portfolio-i-content;
+                position: relative;
+                left: -2px;
+            }
+            &:focus{
+                outline: none !important;
+            }
+        }
+            
+    }  
+}
+/*-------------------------
+          BLOG
+-------------------------*/
+.blog{
+    .blog-item{
+        padding: 30px;
+        margin: 60px 0 30px;
+
+        &::before{
+            @include content;
+            top: 0;
+            left: 45px;
+            width: auto;
+            height: 57px;
+            background-color: map-get($map: $bg-colors, $key: bg-light);
+            z-index: 1;
+            right: 45px
+        }
+    }
+    .blog-content .list-inline-item:not(:last-child) {
+        margin-right: 3rem;
+    }
+    .blog-image{
+        position: relative;
+        display: inline-block;
+        border-radius: $second-border-radius;
+        padding: 10px;
+        margin-top: -88px;
+        background-color: map-get($map: $bg-colors, $key: bg-light);
+
+        &::after{
+            @include bg-before ;
+            box-shadow: $box-shadow-inset;
+            border-radius: $second-border-radius;
+            z-index: 0;
+        }
+    }
+    .blog-intro {
+        box-shadow: $box-shadow;
+        border-radius: $second-border-radius;
+        padding: 5px;
+        position: relative;
+        z-index: 2;
+        display: block;
+
+        img{
+            display: inline-block;
+            border-radius: $border-radius-defualt;
+            width: 100%;
+        }
+    }
+}
+/*-------------------------
+          CONTACT
+-------------------------*/
+::-moz-placeholder, .form-control::-moz-placeholder {
+    color: map-get($map: $colors, $key: dark) ;
+}
+.contact{
+    .form-item{
+        .form-control {
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            height: 44px;
+            font-size: 14px;
+            position: relative;
+            transition: border .9s ease;
+            padding: 1rem;
+            border: none;
+        }
+        .form-group{
+            background-color: map-get($map: $bg-colors, $key: bg-light);
+            box-shadow: $box-shadow-inset;
+            -webkit-box-shadow: $box-shadow-inset;
+            -moz-box-shadow: $box-shadow-inset;
+            -o-box-shadow: $box-shadow-inset;
+            -ms-box-shadow: $box-shadow-inset;
+            border-radius: $second-border-radius;
+        }
+    }
+    &-form textarea {
+        min-height: 175px;
+        resize: none;
+    }
+    #message.toast {
+        max-width: 500px;
+        padding: 2px 0 1px;
+        position: absolute;
+        top: -2px;
+        display: inline-block;
+        left: 200px;
+        border-radius: $border-radius-defualt;
+        color:map-get($map: $colors, $key: light);
+    }
+    .toast button span {
+        position: relative;
+        top: 8px;
+    }
+    .contact-info{
+        ul li{
+            margin-top: 1.5rem;
+        }
+        i {
+            margin-right: 0.5rem;
+        }
+        img{
+            width: 50px;
+        }
+    }
+    .copy-right{
+        position: relative;
+        top: 5rem;
+    }
+}
+/*-------------------------
+        SINGLE BLOG
+-------------------------*/
+.modal-dialog {
+    max-width: 75%;
+}
+.blog-single{
+    .modal-content{
+        background-color: map-get($map: $bg-colors, $key: bg-light);
+    }
+    .close{
+        @include close-icon;
+    }
+    img{
+        width: $w-100;
+        border-radius: $border-radius-defualt;
+    }
+} 
+.comments{
+    img {
+        width:80px;
+        border-radius:50%;
+    }
+    .comment-info {
+        margin-left:100px;
+    }
+}
+/*-------------------------
+      SINGLE Portfolio
+-------------------------*/
+.portfolio-single{
+    .modal-content{
+        background-color: map-get($map: $bg-colors, $key: bg-light);
+    }
+    .close{
+        @include close-icon;
+    }
+    img{
+        border-radius: $border-radius-defualt;
+        width: $w-100;
+    }
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

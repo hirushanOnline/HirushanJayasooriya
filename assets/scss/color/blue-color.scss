@@ -1,0 +1,93 @@
+/*-----------------------------------------------------------
+* Template Name    : Arshia - Fully Responsive Personal Template
+* Author           : Retrina Group
+* Version          : 1.0.0
+* Created          : June 2020
+* File Description : Color sass file of the template
+*------------------------------------------------------------*/
+@import "color-full-variable";
+
+
+::selection {
+    background: transparentize($color: $blue-color, $amount: .70);
+}
+::-moz-selection {
+    background: transparentize($color: $blue-color, $amount: .70);
+}
+.base-color{
+    color: $blue-color !important;
+}
+.hero-social li a:hover, .blog-link a:hover{
+    color: $blue-color-hover !important;
+}
+.bg-base-color {
+    background-color: $blue-color !important;
+}
+.follow-label:before,
+.skill-box .fill-skillbar,
+.timeline-area:before,
+.testimonial .testimonial-border,
+.blog-content:before,
+.blog .owl-dot.active span {
+    background: $blue-color;
+}
+.testimonial .owl-dot.active span{
+    background: $blue-color !important;
+}
+.menu li a ,
+.pill-button ,
+header .navbar-brand span ,
+header .navbar-brand b ,
+.pill-button:hover ,
+.ability ul li:before,
+.timeline-icon,
+.timeline-year ,
+.language-skill ul li i ,
+.contact .form-item .form-control,
+.comments .comment-info a,
+.portfolio .portfolio-icon a,
+.portfolio .portfolio-icon button,
+.blog-content button:hover,
+.comments .comment-info a:hover,
+.social a:hover
+{
+    color: $blue-color;
+}
+.loader {
+    border-top: 4px solid $blue-color !important;
+}
+.timeline-icon{
+    border: 1px solid $blue-color;
+    background-color: $blue-color;
+}
+.portfolio .portfolio-item-content::before {
+
+    background-color:transparentize($color: $blue-color, $amount: 0.1)
+}
+.menu-toggler span {
+    background-color: $blue-color;
+}
+.timeline-item:before
+{
+    border: 2px solid $blue-color;
+}
+.timeline-item:before
+{
+    border: 1px solid $blue-color;
+}
+
+/*-------------------------
+      Flat Demo
+-------------------------*/
+.flat-demo .button-border, .arshia-dark.flat-demo .button-border{
+    background-color: $blue-color;
+}
+.flat-demo .pill-button:hover, .flat-demo .pill-button.active{
+    background-color: $blue-color-hover;
+}
+
+.arshia-dark{
+    .hero-social li a:hover{
+        color: $blue-color-hover !important;
+    }
+}

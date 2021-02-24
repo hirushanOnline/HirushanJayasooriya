@@ -1,0 +1,62 @@
+@import "variable";
+@import "mixin";
+
+/*-------------------------
+         Flat Mono
+-------------------------*/
+.mono.flat-demo{
+    .pill-button {
+        background-color: map-get($map: $bg-colors, $key:  bg-mono-button);
+        border: 1px solid map-get($map: $colors, $key: dark);
+        color: map-get($map: $colors, $key: light) !important;
+
+        &:hover{
+            background-color: map-get($map: $bg-colors, $key: bg-black-dark);
+            border: 1px solid map-get($map: $colors, $key: secondary-dark);
+        }
+    }
+    .portfolio-filter{
+        .pill-button {
+            background-color: transparent;
+            border: none;
+            color: map-get($map: $colors, $key: secondary-dark) !important;
+
+            &.active, &:hover{
+                color:map-get($map: $colors, $key: light)  !important;
+                background-color: map-get($map: $bg-colors, $key: bg-black-dark);
+            }
+        }
+    }
+}
+
+/*-------------------------
+     Dark Flat Mono
+-------------------------*/
+.arshia-dark.mono.flat-demo{
+    .pill-button {
+        background-color: map-get($map: $bg-colors, $key: bg-lighter);
+        border: 1px solid map-get($map: $colors, $key: light);
+        color: map-get($map: $colors, $key: dark) !important;
+
+        &:hover{
+            background-color: map-get($map: $bg-colors, $key: bg-mono-dark);
+            border: 1px solid map-get($map: $colors, $key: base-mono-dar);
+        }
+    }
+    .portfolio-filter{
+        .pill-button {
+            background-color: transparent ;
+            border: none;
+            color: map-get($map: $colors, $key: secondary-light) !important;
+
+            &.active, &:hover{
+                background-color: map-get($map: $bg-colors, $key: bg-mono-dark);
+                color: map-get($map: $colors, $key: dark) !important;
+            }
+        }
+    }
+    .skill-box .skillbar {
+        background-color: map-get($map: $bg-colors, $key: bg-black-dark) !important;
+    } 
+    
+} 

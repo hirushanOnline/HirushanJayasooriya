@@ -1,0 +1,247 @@
+@import "variable";
+@import "mixin";
+
+/*-------------------------
+        ColorPallet
+-------------------------*/
+.color-switcher{
+    .color-pallet {
+        @include color-button;
+        right: 95px;
+        width: 189px;
+        border-radius: $second-border-radius;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .color-pallet.show{
+        opacity: 1;
+        visibility: visible;
+    }
+    .pallet-button {
+        @include color-button;
+        display: block;
+        height: 40px;
+        right: 30px;
+        width: 40px;
+        border-radius: 0.75rem;  
+        a{
+            width: 40px;
+            height: 40px;
+            display: block;
+            text-align: center;
+        }
+        i {
+            color: map-get($map: $colors, $key: secondary-dark);
+            font-size: 20px;
+            line-height: 40px;
+        }
+    }
+    ul.pattern {
+        list-style: none outside none;
+        margin: 0 0 0;
+        overflow: hidden;
+        padding: 0;
+
+        li {
+            float: left;
+        }
+        li a {
+            cursor: pointer;
+            display: block;
+            height: 30px;
+            width: 30px;
+            border-radius:28px 18px 0 21px;
+            transform: rotate(-135deg);
+            margin: 15px  0 15px 25px;
+        }
+        .color1 {
+            background: map-get($map: $color-full, $key: greens);
+        }
+        .color2 {
+            background: map-get($map: $color-full, $key: yellows);
+        }
+        .color3 {
+            background: map-get($map: $color-full, $key: golden);
+        }
+        .color4 {
+            background: map-get($map: $color-full, $key: sky-blue);
+        }
+        .color5 {
+            background: map-get($map: $color-full, $key: blues);
+        }
+        .color6 {
+            background: map-get($map: $color-full, $key: purples);
+        }
+        .color7 {
+            background: map-get($map: $color-full, $key: oranges);
+        }
+        .color8 {
+            background: map-get($map: $color-full, $key: pinks);
+        }
+        .color9 {
+            background: map-get($map: $color-full, $key: reds);
+        }
+    }
+} 
+/*-------------------------
+        PRELOADER
+-------------------------*/
+#overlayer {
+    position:fixed;
+    z-index:9999;
+    background:white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.loader {
+    position: fixed;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    z-index:99999;
+    border: 4px solid map-get($map: $colors, $key: secondary-light);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/*-------------------------
+       OVERLAY MENU
+-------------------------*/
+.menu-toggler{
+    display: none;
+}
+.menu{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-41%);
+    width: 100%;
+    
+    .list-group-item{
+        background-color: transparent;
+        border: none;
+        padding: 0.5rem;
+    }
+    li a{
+        width: 60px;
+        height: 60px;
+        display: block;
+        border-radius: $border-radius-defualt;
+        transition: all 0.3s ease;
+        box-shadow: $menu-box-shadow;
+
+        &:hover, &.active{
+            box-shadow: $menu-box-shadow-inset;
+        }
+
+        i{
+            display: block;
+            font-size: 1.25rem;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+        &:hover i, &.active i {
+            transform: translateY(-100%);
+        }
+    }
+    span{
+        font-size: 12px;
+        font-weight: 500;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    a:hover span, a.active span {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(50%);
+    }
+}
+
+header{
+    width: 80px;
+    border-radius: 0 1.25rem 1.25rem 0;
+    position: fixed;
+    z-index: 1030;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: map-get($map: $bg-colors, $key: bg-light);
+    box-shadow: $box-shadow-second;
+    .navbar-brand {
+        display: block;
+        margin-right: 0;
+        text-align: center;
+        span{
+            display: block;
+            text-align: center;
+            width: 100%;
+            font-weight: 700;
+            font-size: 12px;
+            margin-top: -1rem;
+        }
+        b {
+            display: block;
+            text-align: center;
+            font-weight: 700;
+            font-size: 3rem;
+        }
+    }
+}
+/*-------------------------
+       COLOR SCHEME
+-------------------------*/
+.color-scheme {
+    position: fixed;
+    z-index: 999;
+    right: 31px;
+    top: 25px;
+    padding: .5rem .75rem;
+    border-radius: 0.75rem;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+    &:hover{
+        color: white;
+    }
+    i {
+        position: relative;
+        top: 1px;
+    }
+}
+.scroll-button {
+    display: none;
+    background-color: white;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    bottom: 15px;
+    z-index: 1000;
+    position: fixed;
+    transition: all 0.3s ease;
+    height: 100px;
+    right: 15px;
+    width: 40px;
+    border-radius: 0.75rem;
+    a{
+        width: 40px;
+        height: 50px;
+        line-height: 55px;
+        display: inline-block;
+        transition: all 0.3s ease;
+        display: block;
+        i{
+            font-size: 24px;
+        }
+    }
+  }

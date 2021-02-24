@@ -1,0 +1,92 @@
+/*-----------------------------------------------------------
+* Template Name    : Arshia - Fully Responsive Personal Template
+* Author           : Retrina Group
+* Version          : 1.0.0
+* Created          : June 2020
+* File Description : Color sass file of the template
+*------------------------------------------------------------*/
+@import "color-full-variable";
+
+::selection {
+    background: transparentize($color: $pink-color, $amount: .71);
+}
+::-moz-selection {
+    background: transparentize($color: $pink-color, $amount: .71);
+}
+.base-color{
+    color: $pink-color !important;
+}
+.hero-social li a:hover, .blog-link a:hover{
+    color: $pink-color-hover !important;
+}
+.bg-base-color {
+    background-color: $pink-color !important;
+}
+.follow-label:before,
+.skill-box .fill-skillbar,
+.timeline-area:before,
+.testimonial .testimonial-border,
+.blog-content:before,
+.blog .owl-dot.active span {
+    background: $pink-color;
+}
+.testimonial .owl-dot.active span{
+    background: $pink-color !important;
+}
+.menu li a ,
+.pill-button ,
+header .navbar-brand span ,
+header .navbar-brand b ,
+.pill-button:hover ,
+.ability ul li:before,
+.timeline-icon,
+.timeline-year ,
+.language-skill ul li i ,
+.contact .form-item .form-control,
+.portfolio .portfolio-icon a,
+.portfolio .portfolio-icon button,
+.comments .comment-info a,
+.blog-content button:hover,
+.comments .comment-info a:hover,
+.social a:hover
+{
+    color: $pink-color;
+}
+.loader {
+    border-top: 4px solid $pink-color !important;
+}
+.timeline-icon{
+    border: 1px solid $pink-color;
+    background-color: $pink-color;
+}
+.portfolio .portfolio-item-content::before {
+
+    background-color: transparentize($color: $pink-color, $amount: 0.1);
+}
+.menu-toggler span {
+    background-color: $pink-color;
+}
+.timeline-item:before
+{
+    border: 2px solid $pink-color;
+}
+.timeline-item:before
+{
+    border: 1px solid $pink-color;
+}
+
+/*-------------------------
+      Flat Demo
+-------------------------*/
+.flat-demo .button-border, .arshia-dark.flat-demo .button-border{
+    background-color: $pink-color;
+}
+.flat-demo .pill-button:hover, .flat-demo .pill-button.active{
+    background-color: $pink-color-hover;
+}
+
+.arshia-dark{
+    .hero-social li a:hover{
+        color: $pink-color-hover !important;
+    }
+}

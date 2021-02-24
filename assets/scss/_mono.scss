@@ -1,0 +1,125 @@
+@import "variable";
+@import "mixin";
+
+/*-------------------------
+     Mono Color Light
+-------------------------*/
+.mono{
+   header .navbar-brand span,  header .navbar-brand b, .menu li a, .pill-button,
+   .language-skill ul li i
+   {
+      color: map-get($map: $colors, $key: secondary-dark);
+   }
+   .base-color{
+      color: map-get($map: $colors, $key: dark) !important;
+   }
+   .bg-base-color,
+   .testimonial .owl-dot.active span
+   {
+      background-color: map-get($map: $bg-colors, $key: bg-black-dark) !important;
+   }
+   .hero-social li a:hover, .blog-link a:hover{
+      color: map-get($map: $colors, $key: black-dark) !important;
+   }
+   .timeline-icon {
+      border: 1px solid map-get($map: $colors, $key: secondary-dark) ;
+      background-color:map-get($map: $bg-colors, $key: bg-black-dark);
+  }
+  .timeline-item::before {
+   border: 1px solid map-get($map: $colors, $key: secondary-dark);
+   }  
+   .timeline-year, .portfolio .portfolio-icon button, .portfolio .portfolio-icon a{
+      color: map-get($map: $colors, $key: dark)
+   }
+   .skill-box .fill-skillbar{
+      background-color:map-get($map: $bg-colors, $key: bg-black-dark);
+   }
+   .portfolio .portfolio-item-content::before{
+      background-color: rgba($color: map-get($map: $bg-colors, $key: bg-black-dark), $alpha: 0.9);
+  }  
+  .loader {
+   border-top: 4px solid map-get($map: $colors, $key: secondary-dark) !important;
+   }
+   .menu-toggler span{
+      background-color:map-get($map: $bg-colors, $key: bg-black-dark);
+   }
+   .floating{
+      background: map-get($map: $bg-colors, $key: bg-dark);
+   }
+  .circle-2{
+   background: map-get($map: $bg-colors, $key:  bg-black-dark);
+   }
+   .circle{
+      background: map-get($map: $bg-colors, $key: secondary-bg-dark);
+   }
+}
+/*-------------------------
+      Mono Color Dark
+-------------------------*/
+.mono.arshia-dark{
+   .text-white{
+      color: map-get($map: $colors, $key: secondary-dark) !important;
+   }
+   header .navbar-brand span,  header .navbar-brand b, .menu li a, .pill-button,
+   .language-skill ul li i
+   {
+      color: map-get($map: $colors, $key: light);
+   }
+   .base-color{
+      color: map-get($map: $colors, $key: base-mono-dark) !important;
+   }
+   .bg-base-color
+   {
+      background-color: map-get($map: $bg-colors, $key: secondary-bg-light) !important;
+   }
+
+   .hero-social li a:hover, .blog-link a:hover{
+      color: map-get($map: $colors, $key: mono-hover) !important;
+   }
+   
+   .timeline-icon {
+      border: 1px solid map-get($map: $colors, $key: base-mono-dark);
+      background-color:map-get($map: $bg-colors, $key: bg-mono-dark);
+  }
+  .timeline-item::before {
+   border: 1px solid map-get($map: $colors, $key: base-mono-dark);
+   } 
+    
+   .timeline-year, .portfolio .portfolio-icon button, .portfolio .portfolio-icon a{
+      color: map-get($map: $colors, $key: base-mono-dark)
+   } 
+   .skill-box .fill-skillbar, .testimonial .owl-dot.active span{
+      background-color: map-get($map: $bg-colors, $key: bg-mono-dark);
+   }
+   .testimonial .owl-carousel .owl-dot{
+
+      span{
+         background-color: map-get($map: $bg-colors, $key: bg-black-dark)
+      }
+      &.active span{
+         background-color: map-get($map: $bg-colors, $key: bg-mono-dark) !important;
+      }
+   } 
+   .portfolio .portfolio-item-content::before{
+      background-color: rgba($color: map-get($map: $bg-colors, $key: bg-lighter), $alpha: 0.8);
+  }
+  .portfolio .img-overlay-content h5 {
+   color: map-get($map: $colors, $key: secondary-dark)
+   }
+   .portfolio .portfolio-icon button, .portfolio .portfolio-icon a {
+      background-color: map-get($map: $bg-colors, $key: bg-black-dark);
+   }
+   .menu-toggler span{
+      background-color:map-get($map: $bg-colors, $key: bg-lighter);
+   }
+   .floating{
+      background: map-get($map: $bg-colors, $key: secondary-bg-light);
+   }
+  .circle-2{
+   background: map-get($map: $bg-colors, $key:  bg-mono-dark);
+   }
+   .circle{
+      background: map-get($map: $bg-colors, $key: secondary-bg-dark);
+   }  
+   
+}

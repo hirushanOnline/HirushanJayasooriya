@@ -1,0 +1,84 @@
+@import "variable";
+@import "mixin";
+
+/*-------------------------
+      arshia DARK
+-------------------------*/
+.arshia-dark{
+    #main > section {
+        background-color: map-get($map: $bg-colors, $key: bg-dark) !important;
+        color: map-get($map: $colors, $key: light);
+    }
+    header{
+        background-color: map-get($map: $bg-colors, $key: bg-dark);
+        box-shadow: $dark-box-shadow;
+        
+    }
+    .menu li a{
+        box-shadow: $dark-box-shadow;
+
+        &:hover, &.active{
+            box-shadow: $dark-box-shadow-inset;
+        }
+    }
+    .hero-images img{
+        box-shadow: $dark-box-shadow;
+    }
+    .hero-images .square img{
+        box-shadow: none;
+    }
+    .text-dark, .hero-content, .hero-social li a, .social a, .blog-single .modal-content{
+        color: map-get($map: $colors, $key: light) !important;
+    }
+    .text-muted, .about .personal-info span, .language-skill h4 span{
+        color: map-get($map: $colors, $key: secondary-light) !important;
+    }
+    .blog-content h5 a.text-dark{
+        &:hover, &:focus{
+            color: map-get($map: $colors, $key: secondary-light) !important;
+        }
+    }
+    .hero-01:before, .hero-05:before{
+        background-color: transparentize($color: #000000, $amount: 0.4);
+    }
+    .hero-04, .testimonial .owl-carousel .testimonial-image::before, .skill-box .skillbar,
+    .blog-item:before, .blog-image, .testimonial .owl-carousel .testimonial-image, 
+    .blog-single .modal-content, .portfolio-single .modal-content
+    {
+        background-color: map-get($map: $bg-colors, $key: bg-dark);
+    }
+    .box-border, .box-hover-border, .button-border, .image-border{
+        @include dark-box-layout;
+    }
+    .box-hover-border:hover{
+        box-shadow: $dark-box-shadow-inset;
+    }
+    .pill-button:hover, .pill-button.active{
+        border:none;
+        box-shadow: $dark-box-shadow-inset;
+    }
+    .testimonial .owl-carousel .testimonial-image::after, .skill-box .skillbar, .blog-image:after{
+        box-shadow: $dark-box-shadow-inset;
+    }
+    .testimonial-image-border, .testimonial .owl-carousel .testimonial-image-border{
+        box-shadow:  $dark-box-shadow;
+    }
+    .testimonial .owl-dot.active span {
+        box-shadow: $second-dark-box-shadow-inset;
+    }
+    .blog-intro{
+        box-shadow: $third-dark-box-shadow-inset;
+    }
+    .contact .form-item .form-group{
+        background-color:  map-get($map: $bg-colors, $key: bg-dark);
+        box-shadow: $dark-box-shadow-inset;
+        -webkit-box-shadow: $dark-box-shadow-inset;
+        -moz-box-shadow: $dark-box-shadow-inset;
+        -o-box-shadow: $dark-box-shadow-inset;
+        -ms-box-shadow: $dark-box-shadow-inset;
+    }
+    .portfolio-single .close{
+        color: white;
+    }
+     
+} 

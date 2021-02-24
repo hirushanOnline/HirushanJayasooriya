@@ -1,0 +1,107 @@
+@import "variable";
+@import "mixin";
+
+/*-------------------------
+      Flat Demo Light
+-------------------------*/
+.flat-demo{
+    #main > section{
+        background-color: map-get($map: $bg-colors, $key:  secondary-bg-light);
+    }
+    .blog-single .modal-content, .portfolio-single .modal-content
+    {
+        background-color: map-get($map: $bg-colors, $key: secondary-bg-light);
+    }
+    header{
+        background-color: map-get($map: $bg-colors, $key: bg-lighter);
+    }
+    .testimonial-image-border{
+        background-color: map-get($map: $bg-colors, $key: secondary-bg-light);
+
+        img{
+            padding: 4px;
+            background-color: transparent;
+            border: 1px solid map-get($map: $colors, $key: secondary-light);
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    .skill-box .skillbar{
+        background-color: map-get($map: $bg-colors, $key: secondary-bg-dark);
+    }
+    .menu li a{
+        box-shadow: none;
+
+        &:hover, &.active{
+            box-shadow: none;
+        }
+    }
+    .button-border{
+        box-shadow: none;
+        padding: 0;
+    }
+    .pill-button:hover, .pill-button.active,.testimonial .owl-dot.active span,
+    .skill-box .skillbar, .blog-intro, .contact .form-item .form-group,
+    .testimonial .owl-carousel .testimonial-image-border
+    {
+        box-shadow: none;
+    }
+    .pill-button, .portfolio-filter .pill-button.active, .portfolio-filter .pill-button:hover{
+        color:map-get($map: $colors, $key: light);
+    }
+    .image-border{
+        box-shadow: none;
+        background-color: transparent;
+        padding: 0;
+    }
+    .box-border, .box-hover-border, .contact .form-item .form-group {
+        background-color: map-get($map: $rgb, $key: light);
+        box-shadow: none;
+    }
+    .testimonial .owl-carousel .testimonial-image::after, .testimonial .owl-carousel .testimonial-image::before,
+    .blog-item::before, .blog-image::after
+    {
+        display: none;
+    }
+    .testimonial .owl-carousel .testimonial-image, .portfolio-filter .button-border{
+        background-color: transparent;
+    }
+    .portfolio-filter .pill-button{
+        color: map-get($map: $colors, $key: secondary-dark);
+    }
+    .blog-image{
+        background-color: map-get($map: $bg-colors, $key: secondary-bg-light);
+        padding: 0;
+    }
+}
+
+/*-------------------------
+      Flat Demo Dark
+-------------------------*/
+.arshia-dark.flat-demo{
+    #main > section{
+        background-color: map-get($map: $bg-colors, $key:  third-bg-dark);
+    }
+    .box-hover-border:hover{
+        box-shadow: none;
+    }
+    header, .testimonial-image-border, .blog-image, .blog-single .modal-content, .portfolio-single .modal-content{
+        background-color: map-get($map: $bg-colors, $key: bg-dark);
+    }
+    .testimonial-image-border{
+        img{
+            border: 1px solid map-get($map: $colors, $key: secondary-dark);
+        }
+    }
+    .box-border, .box-hover-border, .contact .form-item .form-group{
+        background-color: map-get($map: $rgb, $key:  dark);
+    }
+    .box-hover-border:hover{
+        box-shadow: none;
+    }
+    .portfolio-filter .pill-button {
+        color: map-get($map: $colors, $key: light);
+    }
+} 
+
+

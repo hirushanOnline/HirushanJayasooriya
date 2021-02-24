@@ -1,0 +1,71 @@
+@import "variable";
+
+@mixin full-wh {
+    width: 100%;
+    height: 100%;
+}
+@mixin content {
+    content: "";
+    position: absolute;
+}
+@mixin box-layout($borderRadius:1.25rem) {
+    background-color: map-get($map: $bg-colors, $key: bg-light);
+    border-radius: $borderRadius;
+    box-shadow: $box-shadow;
+}
+@mixin dark-box-layout {
+    background-color: map-get($map: $bg-colors, $key: bg-dark);
+        box-shadow: $dark-box-shadow;
+}
+@mixin bg-hero {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@mixin bg-before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+@mixin portfolio-icon-content {
+    background-color :white;
+            width:35px;
+            height:35px;
+            line-height:37px;
+            margin:0 8px;
+            display:inline-block;
+            border-radius:4px;
+            transition:all 0.3s ease;
+}
+@mixin  portfolio-i-content {
+    font-size:18px;
+    font-weight: $font-weight-bolder;
+}
+@mixin close-icon {
+    color: map-get($map: $colors, $key: dark);
+    text-shadow: none;
+}
+@mixin color-button {
+    background-color: white;
+        box-shadow: 0 0 5px 1px rgba(0,0,0,0.1);
+        top: 85px;
+        z-index: 1000;
+        position: fixed;
+        transition: all 0.3s ease;
+}
+@mixin circle-option {
+    border-radius: 50%;
+        opacity: 0.9;
+        position: absolute;
+        overflow: hidden;
+}
+
+
+            
+          
+            
+            
+            
+          

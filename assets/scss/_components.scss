@@ -1,0 +1,148 @@
+@import "variable";
+@import "mixin";
+
+/*-------------------------
+         GENERAL
+-------------------------*/
+body{
+    font-family: $muli;
+    font-weight: $font-weight-light;
+}
+.full-screen {
+    height:100vh;
+}
+main#main {
+    @include full-wh;
+    position: absolute;
+    overflow: hidden;
+}
+#main > section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100%);
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-transform: translate3d(100%,0,0);
+    transform: translate3d(100%,0,0);
+    z-index: 0;
+    opacity: 0;
+    background-color: map-get($map: $bg-colors, $key: bg-light);
+    -webkit-transition: opacity 0s ease .6s,-webkit-transform .6s ease .6s;
+    transition: transform .6s ease .6s,opacity 0s ease .6s,-webkit-transform .6s ease .6s;
+    padding-left: 80px;
+
+    &.active{
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        z-index: 2;
+        opacity: 1;
+        -webkit-transition: -webkit-transform .6s ease;
+        transition: -webkit-transform .6s ease;
+        transition: transform .6s ease,-webkit-transform .6s ease;
+    }
+}
+h1, h2, h3, h4, h5, h6, .h1{
+    font-family: $poppins;
+    line-height: $golden-line-height;
+}
+h2,h2 span{
+    font-weight: $font-weight-bolder;
+}
+.max-width-450 {
+    max-width: 450px;
+    margin: 0 auto;
+}
+a:hover{
+    text-decoration: none;
+}
+a, button{
+    outline: none !important;
+}
+.box-border{
+    @include box-layout();
+}
+.box-hover-border{
+    @include box-layout();
+
+    &:hover{
+        box-shadow: $box-shadow-inset;
+    }
+
+}
+.button-border{
+    @include box-layout($borderRadius:1rem);
+    display: inline-block;
+    padding: 1px;
+
+    button{
+        background-color: transparent;
+    }
+}
+.pill-button{
+    border-radius: $border-radius-defualt;
+    border: none;
+    padding: 10px 30px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    display: inline-block;
+
+    &:hover, &.active{
+        border:none;
+        box-shadow: $box-shadow-inset;
+    }
+}
+.image-border {
+    background-color: map-get($map: $bg-colors, $key: bg-light);
+    border-radius: $second-border-radius;
+    box-shadow: $box-shadow-second;
+    padding: 5px;
+
+    img{
+        width: 100%;
+        border-radius: $border-radius-defualt;
+    }
+}
+.title{
+    h2{
+        font-size: 3rem;
+    }
+    p{
+        font-size: 18px;
+    }
+}
+.display-table{
+    @include full-wh;
+    display: table;
+}
+.display-content{
+    vertical-align: middle;
+    display: table-cell;
+    padding: 5rem 0;
+}
+.center-item{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+ 
